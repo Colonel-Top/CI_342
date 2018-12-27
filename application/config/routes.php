@@ -49,6 +49,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'HomeController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['login'] = 'UserController/index';
+$route['authorized'] = 'UserController/authorized';
+$route['register'] = 'UserController/register';
+$route['registration'] = 'UserController/registration';
+$route['logout'] = 'UserController/logout';
+
+
+$route['post/(:num)'] = 'PostController/view/$1';
+$route['post/(:num)/(:num)'] = 'PostController/viewpagin/$1/$2';
+
+$route['post/create'] = 'PostController/showcreate';
+$route['post/edit/(:num)'] = 'PostController/showedit/$1';
+$route['post/delete/(:num)'] = 'PostController/delete/$1';
+$route['post/addpost'] = 'PostController/insert';
+
+$route['post/update'] = 'PostController/update';
+
+
+
+$route['comment/add'] = 'CommentController/insert';
+$route['comment/edit/(:num)'] = 'CommentController/edit/$1';
+$route['comment/update'] = 'CommentController/update';
+$route['comment/delete/(:num)'] = 'CommentController/delete/$1';
+
+
+$route['category/add'] = 'CategoryController/add';
+$route['categories/delete/(:num)'] = 'CategoryController/delete/$1';
+$route['categories/update'] = 'CategoryController/update';
+
+$route['livestream/create'] = 'LiveStreamController/showadd';
+$route['livestream/add'] = 'LiveStreamController/insert';
+$route['livestream/update'] = 'LiveStreamController/update';
+$route['livestream/(:num)'] = 'LiveStreamController/showlink/$1';
+$route['livestream/delete/(:num)'] = 'LiveStreamController/delete/$1';
+$route['livestream/edit/(:num)'] = 'LiveStreamController/edit/$1';
+
+
+
